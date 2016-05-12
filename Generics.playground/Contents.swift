@@ -23,3 +23,17 @@ intStack.push(2)
 print(intStack.pop())
 print(intStack.pop())
 print(intStack.pop())
+
+var stringStack = Stack<String>()
+stringStack.push("this is a string")
+stringStack.push("another string")
+
+print(stringStack.pop())
+
+func myMap<T, U>(items: [T], f: (T) -> (U)) -> [U] {
+    var result = [U]()
+    for item in items {
+        result.append(f(item))
+    }
+    return result
+}
