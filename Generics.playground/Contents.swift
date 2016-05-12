@@ -55,6 +55,15 @@ stringStack.push("another string")
 print(stringStack.pop())
 
 /************************************************/
+func checkIfDescriptionsMatch<T: CustomStringConvertible, U: CustomStringConvertible>(first: T, _ second: U) -> Bool {
+    return first.description == second.description
+}
+
+print(checkIfDescriptionsMatch(Int(1), UInt(1)))
+print(checkIfDescriptionsMatch(1, 1.0))
+print(checkIfDescriptionsMatch(Float(1.0), Double(1.0)))
+
+/************************************************/
 func myMap<T, U>(items: [T], f: (T) -> (U)) -> [U] {
     var result = [U]()
     for item in items {
