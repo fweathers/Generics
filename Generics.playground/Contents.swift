@@ -47,6 +47,16 @@ print(intStack.pop())
 print(doubleStack.pop())
 print(doubleStack.pop())
 
+var myStack = Stack<Int>()
+myStack.push(10)
+myStack.push(20)
+myStack.push(30)
+
+var myStackGenerator = StackGenerator(stack: myStack)
+while let value = myStackGenerator.next() {
+    print("got \(value)")
+}
+
 /************************************************/
 
 
