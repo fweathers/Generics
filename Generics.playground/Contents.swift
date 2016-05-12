@@ -2,6 +2,7 @@
 
 import UIKit
 
+/************************************************/
 struct Stack<Element> {
     var items = [Element]()
     
@@ -36,12 +37,24 @@ print(intStack.pop())
 print(doubleStack.pop())
 print(doubleStack.pop())
 
+/************************************************/
+
+
+func checkIfEqual<T: Equatable>(first: T, _ second: T) -> Bool {
+    return first == second
+}
+
+print(checkIfEqual(1, 1))
+print(checkIfEqual("a string", "a string"))
+print(checkIfEqual("a string", "a different string"))
+
 var stringStack = Stack<String>()
 stringStack.push("this is a string")
 stringStack.push("another string")
 
 print(stringStack.pop())
 
+/************************************************/
 func myMap<T, U>(items: [T], f: (T) -> (U)) -> [U] {
     var result = [U]()
     for item in items {
