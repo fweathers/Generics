@@ -1,6 +1,16 @@
-//: Playground - noun: a place where people can play
-
 import UIKit
+
+/************************************************/
+
+struct StackGenerator<T>: GeneratorType {
+    typealias Element = T
+    
+    var stack: Stack<T>
+    
+    mutating func next() -> Element? {
+        return stack.pop()
+    }
+}
 
 /************************************************/
 struct Stack<Element> {
