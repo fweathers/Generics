@@ -64,13 +64,13 @@ for value in myStack {
 }
 
 /************************************************/
-func pushItemsOntoStack<Element>(inout stack: Stack<Element>, fromArray array: [Element]) {
-    for item in array {
+func pushItemsOntoStack<Element, S: SequenceType where S.Generator.Element == Element>(inout stack: Stack<Element>, fromSequence sequence: S) {
+    for item in sequence {
         stack.push(item)
     }
 }
 
-pushItemsOntoStack(&myStack, fromArray: [1, 2, 3])
+pushItemsOntoStack(&myStack, fromSequence: [1, 2, 3])
 for value in myStack {
     print("after pushing: got \(value)")
 }
