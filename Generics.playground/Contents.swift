@@ -15,3 +15,11 @@ struct Stack {
         return items.removeLast()
     }
 }
+
+var intStack = Stack()
+intStack.push(1)
+intStack.push(2)
+
+print(intStack.pop())
+print(intStack.pop())
+print(intStack.pop())
