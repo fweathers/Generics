@@ -2,4 +2,16 @@
 
 import UIKit
 
-var str = "Hello, Felicia"
+struct Stack {
+    var items = [Int]()
+    
+    mutating func push(newItem: Int) {
+        items.append(newItem)
+    }
+    mutating func pop() -> Int? {
+        guard !items.isEmpty else {
+            return nil
+        }
+        return items.removeLast()
+    }
+}
