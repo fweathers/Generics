@@ -37,3 +37,7 @@ func myMap<T, U>(items: [T], f: (T) -> (U)) -> [U] {
     }
     return result
 }
+
+let strings = ["one", "two", "three"]
+let stringLengths = myMap(strings) { $0.characters.count }
+print(stringLengths)
