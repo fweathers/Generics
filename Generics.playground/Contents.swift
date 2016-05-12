@@ -3,11 +3,9 @@ import UIKit
 /************************************************/
 
 struct StackGenerator<T>: GeneratorType {
-    typealias Element = T
-    
     var stack: Stack<T>
     
-    mutating func next() -> Element? {
+    mutating func next() -> T? {
         return stack.pop()
     }
 }
