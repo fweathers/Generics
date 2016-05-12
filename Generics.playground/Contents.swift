@@ -14,6 +14,14 @@ struct Stack<Element> {
         }
         return items.removeLast()
     }
+    
+    func map<U>(f: Element -> U) -> Stack<U> {
+        var mappedItems = [U]()
+        for item in items {
+            mappedItems.append(f(item))
+        }
+        return Stack<U>(items: mappedItems)
+    }
 }
 
 var intStack = Stack<Int>()
