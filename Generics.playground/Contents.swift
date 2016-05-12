@@ -75,6 +75,12 @@ for value in myStack {
     print("after pushing: got \(value)")
 }
 
+var myOtherStack = Stack<Int>()
+pushItemsOntoStack(&myOtherStack, fromSequence: [1, 2, 3])
+pushItemsOntoStack(&myStack, fromSequence: myOtherStack)
+for value in myStack {
+    print("after pushing items onto stack, got \(value)")
+}
 /************************************************/
 func checkIfEqual<T: Equatable>(first: T, _ second: T) -> Bool {
     return first == second
