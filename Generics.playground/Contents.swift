@@ -27,10 +27,14 @@ struct Stack<Element> {
 var intStack = Stack<Int>()
 intStack.push(1)
 intStack.push(2)
+var doubleStack = intStack.map({ 2 * $0 })
 
 print(intStack.pop())
 print(intStack.pop())
 print(intStack.pop())
+
+print(doubleStack.pop())
+print(doubleStack.pop())
 
 var stringStack = Stack<String>()
 stringStack.push("this is a string")
